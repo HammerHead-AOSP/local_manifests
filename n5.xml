@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="pure"
+           fetch="https://github.com/PureNexusProject-Legacy/" />
+
+  <remote name="github"
+           fetch="https://github.com/"
+           review="review.cyanogenmod.org" 
+           sync-c="true"
+           revision="refs/heads/staging/cm-14.0" />
+
+  <!-- remove stock msm sources -->
+  <remove-project name="platform/hardware/qcom/audio" />
+  <remove-project name="platform/hardware/qcom/bt" />
+  <remove-project name="platform/hardware/qcom/bootctrl" />
+  <remove-project name="platform/hardware/qcom/camera" />
+  <remove-project name="platform/hardware/qcom/display" />
+  <remove-project name="platform/hardware/qcom/gps" />
+  <remove-project name="platform/hardware/qcom/keymaster" />
+  <remove-project name="platform/hardware/qcom/media" />
+  <remove-project name="platform/hardware/qcom/wlan" />
+  <remove-project name="platform/hardware/ril" />
+
+  <!-- msm sources -->
+  <project remote="github" path="hardware/qcom/audio/default" name="CyanogenMod/android_hardware_qcom_audio" revision="staging/cm-14.0" groups="qcom,qcom_audio" />
+  <project remote="github" path="hardware/qcom/audio-caf/msm8974" name="CyanogenMod/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="staging/cm-14.0-8974-caf" />
+  <project remote="github" path="hardware/qcom/bootctrl" name="CyanogenMod/android_hardware_qcom_bootctrl" groups="pdk" />
+  <project remote="github" path="hardware/qcom/bt" name="CyanogenMod/android_hardware_qcom_bt" groups="qcom" />
+  <project remote="github" path="hardware/qcom/bt-caf" name="CyanogenMod/android_hardware_qcom_bt" groups="qcom" revision="staging/cm-14.0-caf" />
+  <project remote="github" path="hardware/qcom/camera" name="CyanogenMod/android_hardware_qcom_camera" groups="qcom" />
+  <project remote="github" path="hardware/qcom/display" name="CyanogenMod/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" />
+  <project remote="github" path="hardware/qcom/display-caf/msm8974" name="CyanogenMod/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="staging/cm-14.0-8974-caf" />
+  <project remote="github" path="hardware/qcom/gps" name="CyanogenMod/android_hardware_qcom_gps" groups="qcom,qcom_gps" />
+  <project remote="github" path="hardware/qcom/keymaster" name="CyanogenMod/android_hardware_qcom_keymaster" groups="qcom,qcom_keymaster" />
+  <project remote="github" path="hardware/qcom/media" name="CyanogenMod/android_hardware_qcom_media" groups="qcom" />
+  <project remote="github" path="hardware/qcom/media-caf/msm8974" name="CyanogenMod/android_hardware_qcom_media" groups="qcom" revision="staging/cm-14.0-8974-caf" />
+  <project remote="github" path="hardware/qcom/wlan" name="CyanogenMod/android_hardware_qcom_wlan" groups="qcom_wlan" />
+  <project remote="github" path="hardware/qcom/wlan-caf" name="CyanogenMod/android_hardware_qcom_wlan" groups="qcom_wlan" revision="staging/cm-14.0-caf" />
+  <project remote="github" path="hardware/ril" name="CyanogenMod/android_hardware_ril" groups="pdk" />
+  <project remote="github" path="hardware/ril-caf" name="CyanogenMod/android_hardware_ril" groups="pdk" revision="staging/cm-14.0-caf" />
+
+  <!-- nexus 5 device tree -->
+  <project remote="github" name="CyanogenMod/android_device_lge_hammerhead" path="device/lge/hammerhead" groups="device,hammerhead,broadcom_pdk,generic_fs" />
+ 
+  <!-- purenexus browseer -->
+  <project path="packages/apps/Browser" name="android_packages_apps_Browser" groups="pdk-fs" remote="pure" revision="mm2" />
+
+  <!-- opengapps -->
+  <project path="vendor/google/build" name="opengapps/aosp_build" revision="master" remote="github" />
+  <project path="vendor/opengapps/sources/all" name="opengapps/all" clone-depth="1" revision="master" remote="github" />
+  <!-- If you need other/additional targets, follow the same template: -->
+  <project path="vendor/opengapps/sources/arm" name="opengapps/arm" clone-depth="1" revision="master" remote="github" />
+
+</manifest>
